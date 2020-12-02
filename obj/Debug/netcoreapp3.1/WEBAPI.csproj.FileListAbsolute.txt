@@ -155,7 +155,6 @@ C:\Users\XHYX0\source\repos\WEBAPI\obj\Debug\netcoreapp3.1\WEBAPI.dll
 C:\Users\XHYX0\source\repos\WEBAPI\obj\Debug\netcoreapp3.1\WEBAPI.pdb
 C:\Users\XHYX0\source\repos\WEBAPI\obj\Debug\netcoreapp3.1\WEBAPI.genruntimeconfig.cache
 C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\WEBAPI.exe
 C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\WEBAPI.deps.json
 C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\WEBAPI.runtimeconfig.json
@@ -323,3 +322,4 @@ C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.
 C:\Users\XHYX0\Source\Repos\API_API_3\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\XHYX0\Source\Repos\API_API_3\obj\Debug\netcoreapp3.1\WEBAPI.csproj.CoreCompileInputs.cache
 C:\Users\XHYX0\Source\Repos\API_API_3\obj\Debug\netcoreapp3.1\WEBAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\XHYX0\source\repos\API_API_3\obj\Debug\netcoreapp3.1\scopedcss\bundle\WEBAPI.styles.css

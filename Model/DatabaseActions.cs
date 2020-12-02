@@ -21,6 +21,7 @@ namespace WEBAPI.Model
             ad1.HairColour = "black";
             ad1.EyeColour = "Brown";
             ad1.Job = "Student";
+            ad1.Age = 18;
             ad2.Id = 2;
             ad2.FirstName = "AD@";
             ad2.LastName = "L@";
@@ -30,6 +31,7 @@ namespace WEBAPI.Model
             ad2.HairColour = "yellow";
             ad2.EyeColour = "red";
             ad2.Job = "chef";
+            ad2.Age = 10;
             ad3.Id = 3;
             ad3.FirstName = "AD#";
             ad3.LastName = "LN#";
@@ -39,15 +41,17 @@ namespace WEBAPI.Model
             ad3.HairColour = "green";
             ad3.EyeColour = "blue";
             ad3.Job = "police";
+            ad3.Age = 90;
         }
         public async Task InsertInit()
         {
             using (AdultContext dbContext = new AdultContext())
             {
-                 await dbContext.Adults.AddAsync(ad1);
+                setValue();
+                await dbContext.Adults.AddAsync(ad1);
                 await dbContext.SaveChangesAsync();
                 Console.WriteLine(1+"/"+dbContext.Adults.FindAsync(ad1.Id));
-                 await dbContext.Adults.AddAsync(ad2);
+                await dbContext.Adults.AddAsync(ad2);
                 await dbContext.SaveChangesAsync();
                 Console.WriteLine(2);
                 await dbContext.Adults.AddAsync(ad3);
