@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using WEBAPI.Model;
+
 namespace WEBAPI
 {
     public class Startup
@@ -26,9 +27,11 @@ namespace WEBAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AdultContext>(opt =>
-              opt.UseInMemoryDatabase("AdultList"));
+        //    services.AddDbContext<AdultContext>(opt =>
+         //     opt.UseInMemoryDatabase("AdultList"));
             services.AddControllers();
+            services.AddDbContext<AdultContext>(opt => opt.UseSqlite("Adults.db"));
+            //services.AddDbContext<AdultDBContext>(opt => opt.UseSqlServer("AS4"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

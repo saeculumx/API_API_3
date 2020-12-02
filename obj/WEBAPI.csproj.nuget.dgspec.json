@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\XHYX0\\source\\repos\\WEBAPI\\WEBAPI.csproj": {}
+    "C:\\Users\\XHYX0\\Source\\Repos\\API_API_3\\WEBAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\XHYX0\\source\\repos\\WEBAPI\\WEBAPI.csproj": {
+    "C:\\Users\\XHYX0\\Source\\Repos\\API_API_3\\WEBAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XHYX0\\source\\repos\\WEBAPI\\WEBAPI.csproj",
+        "projectUniqueName": "C:\\Users\\XHYX0\\Source\\Repos\\API_API_3\\WEBAPI.csproj",
         "projectName": "WEBAPI",
-        "projectPath": "C:\\Users\\XHYX0\\source\\repos\\WEBAPI\\WEBAPI.csproj",
+        "projectPath": "C:\\Users\\XHYX0\\Source\\Repos\\API_API_3\\WEBAPI.csproj",
         "packagesPath": "C:\\Users\\XHYX0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XHYX0\\source\\repos\\WEBAPI\\obj\\",
+        "outputPath": "C:\\Users\\XHYX0\\Source\\Repos\\API_API_3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,7 +42,13 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.0, )"
             },
@@ -52,17 +58,21 @@
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
             }
           },
           "imports": [

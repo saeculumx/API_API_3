@@ -8,8 +8,16 @@ namespace WEBAPI.Model
 {
     public class AdultContext:DbContext
     {
+        public AdultContext()
+        { 
+
+        }
+        public DbSet<Adult> Adults { get; set; }
         public AdultContext(DbContextOptions<AdultContext> options) : base(options)
         { }
-        public DbSet<Adult>Adults{ get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source = Adults.db");
+        }
     }
 }

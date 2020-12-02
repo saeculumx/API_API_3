@@ -14,25 +14,34 @@ namespace WEBAPI.Controllers
     public class AdultsController : ControllerBase
     {
         private readonly AdultContext _context;
-
-        public AdultsController(AdultContext context)
+        private DatabaseActions dbAction;
+        public AdultsController(AdultContext context,DatabaseActions databaseActions)
         {
             _context = context;
+            dbAction = databaseActions;
         }
 
         // GET: api/Adults
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Adult>>> GetAdults()
         {
-            return await _context.Adults.ToListAsync();
+            await dbAction.InsertInit();
+            List<Adult> adultList = new List<Adult>();
+            for (int x = 0; x < dbAction.getsize(); x++)
+            {
+                Adult a = dbAction.GetAdultById(x);
+                adultList.Add(a);
+                Console.WriteLine("Loop： " + x);
+            }
+            return adultList;
         }
 
         // GET: api/Adults/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Adult>> GetAdult(int id)
         {
-            var adult = await _context.Adults.FindAsync(id);
-
+            //await dbAction.InsertInit();
+            var adult = dbAction.GetAdultById(id);
             if (adult == null)
             {
                 return NotFound();
@@ -79,8 +88,7 @@ namespace WEBAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Adult>> PostAdult(Adult adult)
         {
-            _context.Adults.Add(adult);
-            await _context.SaveChangesAsync();
+            await dbAction.InsertAdult(adult);
             return CreatedAtAction(nameof(GetAdult), new { id = adult.Id }, adult);
           //  return CreatedAtAction("GetAdult", new { id = adult.Id }, adult);
         }
@@ -89,21 +97,24 @@ namespace WEBAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Adult>> DeleteAdult(int id)
         {
-            var adult = await _context.Adults.FindAsync(id);
+            var adult = dbAction.GetAdultById(id);
             if (adult == null)
             {
                 return NotFound();
             }
 
-            _context.Adults.Remove(adult);
-            await _context.SaveChangesAsync();
+            dbAction.DeleteAdult(adult);
 
             return adult;
         }
 
         private bool AdultExists(int id)
         {
-            return _context.Adults.Any(e => e.Id == id);
+            if (dbAction.getsize() == 0)
+            {
+                return false;
+            }
+            else return true;
         }
     }
 }
